@@ -1,21 +1,26 @@
 'use strict';
 
-var user =	`CREATE TABLE IF NOT EXISTS tasks (
+var user =	`CREATE TABLE IF NOT EXISTS heroku_9a9e2a34723cf61.user (
 				id INT NOT NULL,
-				login VARCHAR NOT NULL,
-				password VARCHAR NOT NULL,
-				created_at DATATIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-				update_at DATATIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-			)`;
+				login VARCHAR(45) NOT NULL,
+				password VARCHAR(45) NOT NULL,
+				create_at TIMESTAMP(10) NOT NULL,
+				update_at TIMESTAMP(10) NOT NULL,
+				UNIQUE INDEX login_UNIQUE (login ASC) VISIBLE,
+				PRIMARY KEY (id))
+			ENGINE = InnoDB`;
 
-var tasks =	`CREATE TABLE IF NOT EXISTS tasks (
-				id int(11) NOT NULL,
-				task varchar(200) NOT NULL,
-				status tinyint(1) NOT NULL DEFAULT 1,
-				created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-			)`;
+var user1 =	`CREATE TABLE IF NOT EXISTS heroku_9a9e2a34723cf61.user1 (
+				id INT NOT NULL,
+				login VARCHAR(45) NOT NULL,
+				password VARCHAR(45) NOT NULL,
+				create_at TIMESTAMP(10) NOT NULL,
+				update_at TIMESTAMP(10) NOT NULL,
+				UNIQUE INDEX login_UNIQUE (login ASC) VISIBLE,
+				PRIMARY KEY (id))
+			ENGINE = InnoDB`;
 
-var shemas = new Array(user, tasks);
+var shemas = new Array(user, user1);
 
 var up = function(con) {
 	shemas.forEach(function(table) {
@@ -27,3 +32,5 @@ var up = function(con) {
 }
 
 module.exports = up;
+
+//mysql://b3a62d5693f6f8:98e637a0@us-cdbr-iron-east-03.cleardb.net/heroku_9a9e2a34723cf61?reconnect=true
