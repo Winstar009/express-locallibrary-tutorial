@@ -19,9 +19,9 @@ var shemas = new Array(user, tasks);
 
 var up = function(con) {
 	shemas.forEach(function(table) {
-		con.query(sql, function (err, result) {
+		con.query(table, function (err, result) {
 		if (err) throw err;
-			console.log(`Table ${table} created`);
+			console.log(`Table ${result} created`);
 		});
 	});
 }
