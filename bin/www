@@ -104,13 +104,18 @@ var standardConnectin = mysql.createConnection({
 var connection = normalizeConnectionDB(process.env.CLEARDB_DATABASE_URL || standardConnectin)
 
 function normalizeConnectionDB(val){
+  const myURL = new URL('https://user:pass@sub.example.com:8080/p/a/t/h?query=string#hash');
+  console.log(myURL);
   if(val == standardConnectin){
     return val;
   }
   else{
-    const url = require('url');
-    url.parse(val);
-    console.log(url);
+    const url = new URL(val);
+    return mysql.createConnection({
+      host  : url.hostname,
+      user  : url.username,
+      password  : url.password
+    });
   }
 }
 
