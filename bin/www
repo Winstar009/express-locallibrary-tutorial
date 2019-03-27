@@ -111,9 +111,10 @@ function normalizeConnectionDB(val){
     const url = new URL(val);
     console.log(url);
     return mysql.createConnection({
-      host  : url.hostname,
-      user  : url.username,
-      password  : url.password
+      host: url.hostname,
+      user: url.username,
+      password: url.password,
+      database: url.pathname.slice(1);, 
     });
   }
 }
