@@ -11,8 +11,8 @@ var app = express();
 
 var db = require('./bin/db');
 
-var up = require('./migrations/up');
-up(db);
+// var up = require('./migrations/up');
+// up(db);
 
 // var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
 // db.query(sql, function (err, result) {

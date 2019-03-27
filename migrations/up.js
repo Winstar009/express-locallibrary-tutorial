@@ -17,9 +17,9 @@ var tasks =	`CREATE TABLE IF NOT EXISTS tasks (
 
 var shemas = new Array(user, tasks);
 
-function up(connection) {
+function up(con) {
 	shemas.forEach(function(table) {
-		connection.query(sql, function (err, result) {
+		con.query(sql, function (err, result) {
 		if (err) throw err;
 			console.log(`Table ${table} created`);
 		});
