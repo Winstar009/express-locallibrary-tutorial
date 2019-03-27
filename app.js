@@ -9,28 +9,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// setup mysql connection
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : 'Ws031hrt',
-	// insecureAuth : true
-});
-
-
-connection.connect(function(err) {
-	console.log(process.env.CLEARDB_DATABASE_URL);
-	console.log('==> try connection database');
-	if (err) {
-		console.error('==> error connecting: ' + err.stack);
-	return;
-	}
-		console.log('==> connected as id ' + connection.threadId);
-});
-
-// connection.end();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

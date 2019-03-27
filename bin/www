@@ -88,3 +88,34 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+/**
+ * Create MySQL connection
+ */
+
+var mysql      = require('mysql');
+var standardConnectin = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'Ws031hrt',
+  // insecureAuth : true
+});
+
+var connection = normalizeConnectionDB(process.env.CLEARDB_DATABASE_URL || standardConnectin)
+
+function normalizeConnectionDB(val){
+  console.log(val);
+}
+
+
+connection.connect(function(err) {
+  console.log(process.env.CLEARDB_DATABASE_URL);
+  console.log('==> try connection database');
+  if (err) {
+    console.error('==> error connecting: ' + err.stack);
+  return;
+  }
+    console.log('==> connected as id ' + connection.threadId);
+});
+
+// connection.end();
