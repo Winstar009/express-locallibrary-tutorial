@@ -18,7 +18,6 @@ function normalizeConnectionDB(val){
   }
   else{
     const url = new URL(val);
-    console.log(url);
     return mysql.createConnection({
       host: url.hostname,
       user: url.username,
@@ -30,8 +29,6 @@ function normalizeConnectionDB(val){
 
 
 connection.connect(function(err) {
-  console.log(connection);
-  console.log(process.env.CLEARDB_DATABASE_URL);
   console.log('try connection database');
   if (err) {
     console.error('error connecting: ' + err.stack);

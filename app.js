@@ -11,11 +11,14 @@ var app = express();
 
 var db = require('./bin/db');
 
-var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-db.query(sql, function (err, result) {
-	if (err) throw err;
-	console.log("Table created");
-});
+var up = require('./migrations/up');
+up(db);
+
+// var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+// db.query(sql, function (err, result) {
+// 	if (err) throw err;
+// 	console.log("Table created");
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
