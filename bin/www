@@ -104,7 +104,14 @@ var standardConnectin = mysql.createConnection({
 var connection = normalizeConnectionDB(process.env.CLEARDB_DATABASE_URL || standardConnectin)
 
 function normalizeConnectionDB(val){
-  console.log(val);
+  if(val == standardConnectin){
+    return val;
+  }
+  else{
+    const url = require('url');
+    url.parse(val);
+    console.log(url);
+  }
 }
 
 
