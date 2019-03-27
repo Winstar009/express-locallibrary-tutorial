@@ -17,7 +17,7 @@ var tasks =	`CREATE TABLE IF NOT EXISTS tasks (
 
 var shemas = new Array(user, tasks);
 
-function up(con) {
+var up = function(con) {
 	shemas.forEach(function(table) {
 		con.query(sql, function (err, result) {
 		if (err) throw err;
@@ -26,4 +26,4 @@ function up(con) {
 	});
 }
 
-module.exports = up();
+module.exports = up;
