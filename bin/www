@@ -114,13 +114,14 @@ function normalizeConnectionDB(val){
       host: url.hostname,
       user: url.username,
       password: url.password,
-      database: url.pathname.slice(1);, 
+      database: url.pathname.slice(1), 
     });
   }
 }
 
 
 connection.connect(function(err) {
+  console.log(connection);
   console.log(process.env.CLEARDB_DATABASE_URL);
   console.log('==> try connection database');
   if (err) {
