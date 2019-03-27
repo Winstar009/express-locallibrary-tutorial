@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
 
 
 connection.connect(function(err) {
-	console.log(process.env);
+	console.log(process.env.CLEARDB_DATABASE_URL);
 	console.log('==> try connection database');
 	if (err) {
 		console.error('==> error connecting: ' + err.stack);
