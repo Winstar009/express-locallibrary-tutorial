@@ -32,9 +32,11 @@ connection.connect(function(err) {
   console.log('try connection database');
   if (err) {
     console.error('error connecting: ' + err.stack);
-  return;
+    return;
   }
-    console.log('connected as id ' + connection.threadId);
+  var up = require('../migrations/up');
+  up(connection);
+  console.log('connected as id ' + connection.threadId);
 });
 
 // connection.end();
