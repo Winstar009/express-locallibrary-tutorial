@@ -1,23 +1,23 @@
 'use strict';
 
-var user =	`CREATE TABLE IF NOT EXISTS `mydb`.`table1` (
-				`id` INT NOT NULL,
-				`login` VARCHAR(45) NOT NULL,
-				`password` VARCHAR(45) NOT NULL,
-				`create_at` TIMESTAMP(10) NOT NULL,
-				`update_at` TIMESTAMP(10) NOT NULL,
-				UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE,
-				PRIMARY KEY (`id`))
+var user =	`CREATE TABLE IF NOT EXISTS mydb'.'table1' (
+				'id' INT NOT NULL,
+				'login' VARCHAR(45) NOT NULL,
+				'password' VARCHAR(45) NOT NULL,
+				'create_at' TIMESTAMP(10) NOT NULL,
+				'update_at' TIMESTAMP(10) NOT NULL,
+				UNIQUE INDEX 'login_UNIQUE' ('login' ASC) VISIBLE,
+				PRIMARY KEY ('id'))
 			ENGINE = InnoDB`;
 
-var user =	`CREATE TABLE IF NOT EXISTS `mydb`.`table1` (
-				`id` INT NOT NULL,
-				`login` VARCHAR(45) NOT NULL,
-				`password` VARCHAR(45) NOT NULL,
-				`create_at` TIMESTAMP(10) NOT NULL,
-				`update_at` TIMESTAMP(10) NOT NULL,
-				UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE,
-				PRIMARY KEY (`id`))
+var user1 =	`CREATE TABLE IF NOT EXISTS mydb'.'table1' (
+				'id' INT NOT NULL,
+				'login' VARCHAR(45) NOT NULL,
+				'password' VARCHAR(45) NOT NULL,
+				'create_at' TIMESTAMP(10) NOT NULL,
+				'update_at' TIMESTAMP(10) NOT NULL,
+				UNIQUE INDEX 'login_UNIQUE' ('login' ASC) VISIBLE,
+				PRIMARY KEY ('id'))
 			ENGINE = InnoDB`;
 
 var shemas = new Array(user, user1);
