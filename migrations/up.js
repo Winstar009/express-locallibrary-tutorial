@@ -1,6 +1,6 @@
 'use strict';
 
-var user =	`CREATE TABLE IF NOT EXISTS mydb'.'table1' (
+var user =	`CREATE TABLE IF NOT EXISTS 'heroku_9a9e2a34723cf61'.'table1' (
 				'id' INT NOT NULL,
 				'login' VARCHAR(45) NOT NULL,
 				'password' VARCHAR(45) NOT NULL,
@@ -10,7 +10,7 @@ var user =	`CREATE TABLE IF NOT EXISTS mydb'.'table1' (
 				PRIMARY KEY ('id'))
 			ENGINE = InnoDB`;
 
-var user1 =	`CREATE TABLE IF NOT EXISTS mydb'.'table1' (
+var user1 =	`CREATE TABLE IF NOT EXISTS 'heroku_9a9e2a34723cf61'.'table2' (
 				'id' INT NOT NULL,
 				'login' VARCHAR(45) NOT NULL,
 				'password' VARCHAR(45) NOT NULL,
