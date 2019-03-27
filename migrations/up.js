@@ -15,7 +15,7 @@ var tasks =	`CREATE TABLE IF NOT EXISTS tasks (
 				created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 			)`;
 
-var shemas = (user, tasks);
+var shemas = array(user, tasks);
 
 function up(connection) {
 	shemas.forEach(function(table) {
