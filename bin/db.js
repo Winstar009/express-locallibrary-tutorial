@@ -34,9 +34,11 @@ connection.connect(function(err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
-  var up = require('../migrations/up');
-  up(connection);
-  console.log('connected as id ' + connection.threadId);
+  else{
+    var up = require('../migrations/up');
+    up(connection);
+    console.log('connected as id ' + connection.threadId);
+  }
 });
 
 // connection.end();
