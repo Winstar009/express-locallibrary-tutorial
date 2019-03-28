@@ -35,9 +35,9 @@ connection.connect(function(err) {
     return;
   }
   else{
-    var up = require('../migrations/up');
-    up(connection);
-    console.log('connected as id ' + connection.threadId);
+  //   var up = require('../migrations/up');
+  //   up(connection);
+  //   console.log('connected as id ' + connection.threadId);
   }
 });
 
